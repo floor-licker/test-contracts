@@ -1,6 +1,5 @@
-pragma solidity >=0.6.6;
+pragma solidity ^0.8.0;
 
-import "../Math/SafeMath.sol";
 
 contract SimpleToken {
     using SafeMath for uint256;
@@ -19,8 +18,8 @@ contract SimpleToken {
 
     function transfer(address _to, uint256 _value) public returns (bool) {
         require(balanceOf[msg.sender] >= _value, "Insufficient balance");
-        balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);
-        balanceOf[_to] = balanceOf[_to].add(_value);
+        balanceOf[msg.sender] = balanceOf[msg.sender]-(_value);
+        balanceOf[_to] = balanceOf[_to]+(_value);
         return true;
     }
 }
