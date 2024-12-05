@@ -1,6 +1,5 @@
-pragma solidity >=0.6.0;
+pragma solidity ^0.8.0;
 
-import "../Math/SafeMath.sol";
 
 contract Crowdsale {
     using SafeMath for uint256;
@@ -17,9 +16,9 @@ contract Crowdsale {
     }
 
     function buyTokens() public payable {
-        uint256 tokens = msg.value.mul(rate);
-        raisedAmount = raisedAmount.add(msg.value);
-        contributions[msg.sender] = contributions[msg.sender].add(msg.value);
+        uint256 tokens = msg.value*(rate);
+        raisedAmount = raisedAmount+(msg.value);
+        contributions[msg.sender] = contributions[msg.sender]+(msg.value);
 
         // Normally, you would transfer tokens here
     }
