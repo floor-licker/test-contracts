@@ -2,8 +2,8 @@
 pragma solidity ^0.8.0;
 
 contract Example {
-    address public immutable owner;  // Marked as immutable
-    uint256 public immutable totalSupply;  // Marked as immutable
+    address public  owner;  // Marked as immutable
+    uint256 public  totalSupply;  // Marked as immutable
     uint256 public creationTime;  // Left as is because it's not immutable
 
     constructor(address _owner, uint256 _totalSupply) {
