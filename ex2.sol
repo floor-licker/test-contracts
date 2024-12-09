@@ -1,5 +1,5 @@
 // Sample Solidity Contract after Refactoring
-pragma solidity ^0.8.0;
+pragma solidity ^0.7.0;
 
 contract Example {
     address public owner;  
